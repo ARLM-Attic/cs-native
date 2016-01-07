@@ -1463,33 +1463,23 @@ target_link_libraries (test mscorlib system_private_uri system_resources_resourc
         [TestMethod]
         public void Test_Mono_Tests_Async()
         {
-            // 2 - WaitAll not implemented
-            // 4 - WaitAll not implemented
             // 6 - TODO: it works if compiled in DEBUG, but crashes when compile in RELEASE
-            // 10 - WaitAll not implemented
-            // 11 - WaitAll not implemented
-            // 12 - WaitAll not implemented
             // 13 - GetMethods not implemented
-            // 14 - WaitAll not implemented
-            // 15 - WaitAll not implemented
             // 16 - GetMethods not implemented
             // 17 - GetMethods not implemented
-            // 18 - WaitAll not implemented
+            // 19 - NotImplemented UnhandledException
+            // 20 - error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo.Create'
+            // 21 - error CS0656: Missing compiler required member 'Microsoft.CSharp.RuntimeBinder.Binder.Convert'
 
             var skip = new List<int>(new[]
             {
-                2,
-                4,
                 6,
-                10,
-                11,
-                12,
                 13,
-                14,
-                15,
                 16,
                 17,
-                18
+                19,
+                20,
+                21
             });
 
             foreach (var index in Enumerable.Range(1, 48).Where(n => !skip.Contains(n)))
